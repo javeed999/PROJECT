@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handlers</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+   <style>
+    .iAmRed{
+        color:red;
+    }
+   </style>
+</head>
+<body>
+    <h1>Event Handling</h1>
+    <a href="http://www.w3schools.com" target="_blank" class="linkMod">I am a link but I don't link anywhere.</a>
+    <p>Click Me o Toggle Class</p>
+    <script>
+        $(document).ready(function(){
+            $("p").click(function(){
+           $('a').toggleClass("iAmRed");
+           
+        });
+
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Keyboard Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>    
+<body>
+    <h1>Rajiv Gandhi University of Knowledge Technologies, RK Valley</h1>
+    <h2>Branches</h2>
+    <p>Press any key, and the key details will be shown below:</p>
+    
+    <input type="text" id="inputField" placeholder="Click here and type something">
+    <p id="keyOutput">Waiting for key press...</p>
+
+    <script>
+        $(document).ready(function() {
+            
+
+            // Keydown event - Fires when a key is pressed
+            $(document).keydown(function(event) {
+                $('#keyOutput').text("Key Down: " + event.key);
+                console.log("key downed"+event.key);
+            });
+
+            // Keyup event - Fires when a key is released
+            $(document).keyup(function(event) {
+                $('#keyOutput').text("Key Up: " + event.key);
+            });
+
+            // Keypress event - Fires when a character key is pressed (deprecated but included)
+            $(document).keypress(function(event) {
+                $('#keyOutput').text("Key Pressed: " + event.key);
+            });
+        });
+    </script>
+</body>
+</html>

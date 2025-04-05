@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Form Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>    
+<body>
+    <h1>Rajiv Gandhi University of Knowledge Technologies, RK Valley</h1>
+    <h2>Form Events Example</h2>
+
+    <input type="text" id="inputField" placeholder="Type something">
+    <br><br>
+    <textarea id="textAreaField" placeholder="Type here..."></textarea>
+    <br><br>
+    <select id="dropdown">
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="Civil">Civil</option>
+    </select>
+    <p id="eventOutput">Event details will appear here...</p>
+
+    <script>
+        $(document).ready(function() {
+            // Focus event - When a form element is selected
+            $('input, textarea, select').focus(function() {
+                $('#eventOutput').text("Focused on: " + $(this).prop("tagName"));
+            });
+
+            // Blur event - When focus is lost from a form element
+            $('input, textarea, select').blur(function() {
+                $('#eventOutput').text("Focus lost from: " + $(this).prop("tagName"));
+            });
+
+            // Change event - When selection or value changes
+            $('input, textarea, select').change(function() {
+                $('#eventOutput').text("Value changed: " + $(this).val());
+            });
+            // Use 'input' event for textarea (works as the user types)
+            $('#textAreaField').on("input", function() {
+            $('#eventOutput').text("Text updated: " + $(this).val());
+            });
+        });
+    </script>
+</body>
+</html>

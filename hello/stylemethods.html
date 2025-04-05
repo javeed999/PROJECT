@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Style Methods</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        /* Define the highlight class */
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+            color: blue;
+        }
+        </style>
+</head>    
+<body>
+    <h1>Rajiv Gandhi University of Knowledge Technologies, RK Valley</h1>
+    <h2>Branches</h2>
+    <p id="cse">Computer Science and Engineering</p>
+    <p id="ece">Electrical and Electronics Engineering</p>
+    
+    <button id="applyStyles">Apply Styles</button>
+    <button id="addHighlight">Add Highlight</button>
+    <button id="removeHighlight">Remove Highlight</button>
+    <button id="toggleHighlight">Toggle Highlight</button>
+    
+
+    <script>
+        $(document).ready(function() {
+            // Apply CSS styles dynamically
+            $('#applyStyles').click(function() {
+                $('h1').css('color', 'blue');  
+                $('h2').css('color', 'green');  
+                $('#cse').css({'color': 'red', 'font-size': '20px'});  
+                $('#ece').css({'color': 'purple', 'font-style': 'italic'});  
+                $('p').css({'width': '300px', 'height': '50px'});
+            });
+
+            // Add class using jQuery
+            $('#addHighlight').click(function() {
+                $('p').addClass('highlight');
+            });
+
+            // Remove class using jQuery
+            $('#removeHighlight').click(function() {
+                $('p').removeClass('highlight');
+            });
+
+            // Toggle class using jQuery
+            $('#toggleHighlight').click(function() {
+                $('p').toggleClass('highlight');
+            });
+
+        });
+    </script>
+</body>
+</html>

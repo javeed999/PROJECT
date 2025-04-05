@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Effects</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>    
+<body>
+    <h1>Rajiv Gandhi University of Knowledge Technologies, RK Valley</h1>
+    <h2>Branches</h2>
+    <p id="cse">Computer Science and Engineering</p>
+    <p id="ece">Electrical and Electronics Engineering</p>
+    <p id="civil">Civil Engineering</p>
+    <p class="text">Hello, good morning everyone</p>
+    
+    <button id="hidebtn">Hide</button>
+    <button id="showbtn">Show</button> 
+    <button id="togglebtn">Hide or Show</button>
+    <button id="fadeinbtn">Fade In</button>
+    <button id="fadeoutbtn">Fade Out</button>
+    <button id="fadeToggle">Fade Toggle</button>
+    <button id="fadeTo">FadeTo</button>
+    <button id="slidedownbtn">Slide Down</button>
+    <button id="slideupbtn">Slide Up</button>
+    <button id="chainbtn">Chaining Effect</button>
+    <button id="delaybtn">Delay Effect</button>
+    <button id="animatebtn">Animate</button>
+
+
+    <script>
+        $(document).ready(function() {
+            // Applying styles
+            $('#cse').css('color', 'red');
+            $('#ece').css('color', 'red');
+            $('.text').css('color', 'green');
+            $('#ece, .text, button').css('color', 'blue');
+
+            // Hide effect
+            $('#hidebtn').click(function() {
+                $('p').hide(1000);  // Hide all <p> elements in 1 second
+            });
+
+            // Show effect
+            $('#showbtn').click(function() {
+                $('p').show(1000);  // Show all <p> elements in 1 second
+            });
+            
+            //toggle effect
+            $('#togglebtn').click(function(){
+                $('p').toggle(5000);
+            });
+
+            // Fading Effects
+            $('#fadeinbtn').click(function() {
+                $('p').fadeIn(1000);  // Fade in all <p> elements
+            });
+
+            $('#fadeoutbtn').click(function() {
+                $('p').fadeOut(1000);  // Fade out all <p> elements
+            });
+
+            //fadetoggle
+            $('#fadeToggle').click(function(){
+                $('p').fadeToggle('fast');
+            });
+
+            //FadeTo
+            $('#fadeTo').click(function(){
+                $('p').fadeTo('slow',0.1);
+            });
+
+            // Sliding Effects
+            $('#slidedownbtn').click(function() {
+                $('p').slideDown(1000);  // Slide down all <p> elements
+            });
+
+            $('#slideupbtn').click(function() {
+                $('p').slideUp(1000);  // Slide up all <p> elements
+            });
+
+            // Chaining Effects
+            $('#chainbtn').click(function() {
+                $('p').css('color', 'green').slideUp(1000).slideDown(1000).fadeOut(1000).fadeIn(1000);
+            });
+            // Animate Effect
+        $('#animatebtn').click(function() {
+                $('p').animate({
+                    opacity: 0.5,         // Change opacity
+                    fontSize: "20px",     // Increase font size
+                    marginLeft: "100px"    // Move text to the right
+                    }, 'fast');
+});
+
+
+            // Delay Effect
+            $('#delaybtn').click(function() {
+                $('p').delay(2000).fadeOut(1000).fadeIn(1000);
+            });
+        });
+    </script>
+</body>
+</html>

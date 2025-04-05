@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Document Events Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $(document).click(function(event){
+                $("#output").text("You clicked at "+event.pageX+" "+event.pageY)
+            })
+
+            $(document).dblclick(function(){
+                alert("double click noticed")
+            })
+            $(document).keydown(function(event){
+                $("#keyOutput").text("You cliked the key: "+event.key)
+            })
+            $(document).mousemove(function(event){
+                $("#mouseOutput").text("You cliked the key: "+event.pageX+" "+event.pageY)
+            })
+
+            })
+    </script>
+</head>
+<body style="height: 1200px;">
+    <h2>jQuery Document Events</h2>
+    <p id="output">Click anywhere on the document.</p>
+    <p id="keyOutput">Press any key to see its name.</p>
+    <p id="mouseOutput">Move your mouse to track position.</p>
+    <p id="scrollOutput">Scroll the page to trigger this event.</p>
+    <p id="resizeOutput">Resize the window to detect changes.</p>
+</body>
+
+</html>
+
+
+
+<!--
+
+$(document).ready(function() {
+    // Document ready event
+    console.log("Document is fully loaded!");
+
+    // Click event on the document
+    $(document).click(function(event) {
+        $("#output").text("Clicked at: X = " + event.pageX + ", Y = " + event.pageY);
+    });
+
+    // Double click event
+    $(document).dblclick(function() {
+        alert("Double-click detected on the page!");
+    });
+
+    // Keydown event
+    $(document).keydown(function(event) {
+        $("#keyOutput").text("Key Pressed: " + event.key);
+    });
+
+    // Mouse move event
+    $(document).mousemove(function(event) {
+        $("#mouseOutput").text("Mouse Position: X = " + event.pageX + ", Y = " + event.pageY);
+    });
+
+    // Scroll event
+    $(window).scroll(function() {
+        $("#scrollOutput").text("You scrolled the page!");
+    });
+
+    // Window resize event
+    $(window).resize(function() {
+        $("#resizeOutput").text("Window resized! New width: " + $(window).width());
+    });
+});
+
+-->

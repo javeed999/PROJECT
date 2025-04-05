@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Selectors</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>    
+<body>
+    <h1>Rajiv Gandhi University of Knowledge Technologies, Rk VAlley</h1>
+    <h2>Branches</h2>
+    <p id="cse">Computer science and Engineering</p>
+    <p id="ece">Electrical and Electronics Enginering</p>
+    <p id="civil">Civil Engineering</p>
+    <p class="text">Hello Good morning everyone</p>
+    <button id="hidebtn">Hide </button>
+    <button id="showbtn">show</button> 
+    <script>
+        $(document).ready(function() {
+            $('#cse').css('color','red');
+            $('#ece').css('color','red');
+            $('.text').css('color','green');
+            // $('*').css('color','red');
+            $('#ece,.text,button').css('color','blue');
+            $('#hidebtn').click(function(){
+                $('p').hide(5000);
+                
+                $('#showbtn').click(function(){
+             $('p').show(5000);
+             });
+            });
+            
+            
+        });
+      
+        
+    </script>
+</body>
+
+</html>

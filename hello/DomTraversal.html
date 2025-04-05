@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery DOM Traversal</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .highlight { background-color: yellow; }
+        .border { border: 2px solid red; }
+        .text-red { color: red; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul>
+            <li>Computer Science</li>
+            <li id="selected">Electrical Engineering</li>
+            <li>Mechanical Engineering</li>
+            <li>Civil Engineering</li>
+        </ul>
+    </div>
+
+    
+    <button id="parentBtn">Parent</button>
+    <button id="parentsBtn">All Parents</button>
+    <button id="parentsUntilBtn">Parents Until UL</button>
+    <button id="filterBtn">Filter Selected</button>
+    <button id="firstBtn">First Item</button>
+    <button id="lastBtn">Last Item</button>
+    <button id="prevAllBtn">Previous All Siblings</button>
+    <button id="nextAllBtn">Next All Siblings</button>
+    <button id="siblingsBtn">Siblings</button>
+    <button id="childrenBtn">Children</button>
+    <button id="findBtn">Find LI in UL</button>
+    <button id="nextBtn">Next Sibling</button>
+    <button id="prevBtn">Previous Sibling</button>
+    <button id="notBtn">Exclude Selected</button>
+
+    <script>
+        $(document).ready(function() {
+            $("#findBtn").click(function() {
+                $("#container").find("li").addClass("text-red"); // Find all <li> inside #container
+            });
+
+            $("#parentBtn").click(function() {
+                $("#selected").parent().addClass("border"); // Highlight immediate parent
+            });
+
+            $("#parentsBtn").click(function() {
+                $("#selected").parents().addClass("highlight"); // Highlight all ancestors
+            });
+
+            $("#parentsUntilBtn").click(function() {
+                $("#selected").parentsUntil("#container").addClass("border"); // Highlight ancestors up to <ul>
+            });
+
+            $("#notBtn").click(function() {
+                $("li").not("#selected").css("text-decoration", "underline"); // Exclude selected
+            });
+
+            $("#filterBtn").click(function() {
+                $("li").filter("#selected").css("font-weight", "bold"); // Only selected item
+            });
+
+            $("#firstBtn").click(function() {
+                $("li:first-child").css("background-color", "lightgray"); // First item
+            });
+
+            $("#lastBtn").click(function() {
+                $("li").last().css("background-color", "lightgreen"); // Last item
+            });
+
+            $("#prevAllBtn").click(function() {
+                $("#selected").prevAll().addClass("highlight"); // Highlight previous siblings
+            });
+
+            $("#nextAllBtn").click(function() {
+                $("#selected").nextAll().css("border", "2px solid blue"); // Highlight next siblings
+            });
+
+            $("#siblingsBtn").click(function() {
+                $("#selected").siblings().addClass("highlight"); // Highlight all siblings
+            });
+
+            $("#childrenBtn").click(function() {
+                $("ul").children().addClass("text-red"); // Highlight direct children of <ul>
+            });
+
+            $("#nextBtn").click(function() {
+                $("#selected").next().addClass("highlight"); // Highlight next sibling
+            });
+
+            $("#prevBtn").click(function() {
+                $("#selected").prev().addClass("highlight"); // Highlight previous sibling
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple jQuery Attribute Methods</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .disabled {
+            pointer-events: none; /* Makes the link unclickable */
+            color: gray;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            // Change the link URL
+            $("#changeLink").click(function(){
+                // $("#myLink").attr("href", "https://google.com").text("Go to Google");      
+                $("mylink").attr("href","https://google.com").text("Go to Google")
+            });
+
+            // Remove the hyperlink
+            $("#removeLink").click(function(){
+                $("#myLink").removeAttr("href").text("Link Removed");
+            });
+
+            // Disable the link (prevent clicking)
+            $("#disableLink").click(function(){
+                $("#myLink").addClass("disabled");
+            });
+
+            // Enable the link (allow clicking again)
+            $("#enableLink").click(function(){
+                $("#myLink").removeClass("disabled");
+            });
+
+            // Get input box value
+            $("#getValue").click(function(){
+                let value = $("#myInput").val();
+                $("#displayValue").text("You entered: " + value);
+            });
+
+            // Set input box value
+            $("#setValue").click(function(){
+                $("#myInput").val("Hello, jQuery!");
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Link Example -->
+    <a id="myLink" href="https://facebook.com">Visit Facebook</a><br><br>
+
+    <button id="changeLink">Change Link</button>
+    <button id="removeLink">Remove Link</button>
+    <button id="disableLink">Disable Link</button>
+    <button id="enableLink">Enable Link</button>
+
+    <br><br>
+
+    <!-- Input Box Example -->
+    <input type="text" id="myInput" placeholder="Enter text here">
+    <button id="getValue">Get Value</button>
+    <button id="setValue">Set Value</button>
+
+    <p id="displayValue" style="font-weight: bold; color: blue;"></p>
+
+</body>
+</html>

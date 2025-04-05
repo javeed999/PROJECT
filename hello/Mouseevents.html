@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Mouse Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>    
+<body>
+    <h1>Rajiv Gandhi University of Knowledge Technologies, RK Valley</h1>
+    <h2>Branches</h2>
+    <p id="cse">Computer Science and Engineering</p>
+    <p id="ece">Electrical and Electronics Engineering</p>
+    <p id="civil">Civil Engineering</p>
+    <p class="text">Hello, Good Morning Everyone</p>
+    <button id="hidebtn">Hide or show</button>
+
+    <script>
+        $(document).ready(function() {
+            // Click event - Hide all <p> elements
+            $('#hidebtn').click(function() {
+                $('p').toggle(1000);  // Hides paragraphs in 1 second
+            });
+
+            // Mouse Down - Change text color when mouse button is pressed
+            $('p').mousedown(function() {
+                $(this).css('color', 'red');
+            });
+
+            // Mouse Up - Change text color back when mouse button is released
+            $('p').mouseup(function() {
+                $(this).css('color', 'black');
+            });
+
+            // Double Click - Highlight text
+            $('p').dblclick(function() {
+                $(this).css('background-color', 'yellow');
+            });
+
+            // Hover - Change background color on hover
+            $('p').hover(
+                function() {
+                    $(this).css('background-color', 'lightgray'); // Mouse enters
+                }, 
+                function() {
+                    $(this).css('background-color', ''); // Mouse leaves
+                }
+            );
+        });
+    </script>
+</body>
+</html>
